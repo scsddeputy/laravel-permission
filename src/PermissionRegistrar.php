@@ -18,7 +18,7 @@ class PermissionRegistrar
     protected $cache;
 
     /** @var string */
-    protected $cacheKey = 'spatie.permission.cache';
+    protected $cacheKey = explode('.', request()->getHttpHost())[0] . '.spatie.permission.cache';
 
     public function __construct(Gate $gate, Repository $cache)
     {
